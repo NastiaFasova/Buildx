@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>BuildX</title>
+            <link rel="stylesheet" type="text/css" href="style/style.css">
+            <link rel="stylesheet" type="text/css" href="style/media.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+            
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="hero">
+                <header>
+                    <a href="#" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
+                    <div class="btn--burger">
+                        <span style="cursor:pointer" id="burger" class="burger">&#9776;</span>
+                    </div>
+                    <nav id="nav" class="nav">
+                        <a href="javascript:void(0)" class="btn--close" onclick="closeNav()">&times;</a>
+                        <a href="#" class="logo"><img src="images/Logo.svg" alt="logo"></a>
+                        <div class="btn btn--menu">
+                            <a href="#" class="btn__menu active">Головна</a>
+                            <a href="#" class="btn__menu prj">Проекти</a>
+                            <a href="#" class="btn__menu">Як замовити?</a>
+                        </div>
+                        <div class="btn btn--func">
+                            <button onclick="modalWindow('id01')" id="btn-reg" class="btn__registration">Реєстрація</button>
+                            
+                            
+
+                            <button onclick="modalWindow('id02')" id="btn-log" class="btn__login">Вхід</button>
+
+                            <button class="btn__contacts">Контакти</button>
+                        </div>
+                    </nav>
+
+                    <div id="id01" class="modal registration">
+                        <div class="modal__container reg-block">
+                            <form class="modal__content animate form reg-form" method="post">
+                                <input type="text" placeholder="Ім’я" name="name" required>
+                                <input type="text" placeholder="Номер телефону" name="phoneNumber" required>
+                                <input type="text" placeholder="Електронна почта" name="email" required>
+                                <input type="password" placeholder="Пароль" name="password" required>
+                                <input type="password" placeholder="Повторити пароль" name="repeatPassword" required>
+                                <button type="submit" class="btn__register">Зареєструватись</button>
+                                <div class="login">Вже є аккаунт?<a class="btn__reg" href="#"><strong>Вхід</strong></a></div>
+                            </form>
+                            <div class="modal__content animate img">
+                                <a href="#" class="logo"><img src="images/Logo.svg" alt="logo"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="id02" class="modal login">
+                        <div class="modal__container login-block">
+                            <form class="modal__content animate form login-form" method="post">
+                                <input type="text" placeholder="Електронна почта" name="email" required>
+                                <input type="password" placeholder="Пароль" name="password" required>
+                                <button type="submit" class="btn__register login-btn">Вхід</button>
+                                <div class="login">Немає аккаунту?<a class="btn__reg" href="#"><strong>Зареєструватись</strong></a></div>
+                            </form>
+                            <div class="modal__content animate img">
+                                <a href="#" class="logo"><img src="images/Logo.svg" alt="logo"></a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <aside>
+                    <div class="social__block">
+                        <div class="social__wrapper">
+                            <a href="#" class="btn__social">
+                                <h3>Facebook</h3>
+                                <img src="images/social_media/facebook.svg" alt="facebook">
+                            </a>
+                            <a href="#" class="btn__social">
+                                <h3>YouTube</h3>
+                                <img src="images/social_media/youtube.svg" alt="youtube">
+                            </a>
+                            <a href="#" class="btn__social">
+                                <h3>Instagram</h3>
+                                <img src="images/social_media/instagram.svg" alt="instagram">
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="main-text">
+                    <p>Не можеш знайти будинок мрії?</p>
+                    <h1>Компанія BuildX допоможе!<br> З нас проект - з <br>Вас реалізація!</h1>
+                    <div class="btn btn--auth">
+                        <button onclick="modalWindow('id02')" id="btn-log" class="btn__login main">Ввійти</button>
+                        <button onclick="modalWindow('id01')" id="btn-reg" class="btn__registration main">Зареєструватись</button>
+                    </div>
+                </div>
+            </div>
+
+            <main>
+                <section class="why-us">
+                    <div class="line"></div>
+                        <div class="white-line"></div>
+                            <div class="why-us__text">
+                                <div class="why-us__block">
+                                    <h1>Чому обирають нас?</h1>
+                                    <p>Компанія BuildX є одним із лідерів архітектурних рішень в Україні. Філії компанії є в багатьох містах, близько 3000 людей працюють, щоб ви були впевнені в якості свого проекту. Кожен проект є абсолютно унікальним, тобто створюється з нуля. Ми працюємо на умовах абсолютної прозорості, тобто ви слідкуєте за кожним етапом створення проекту. BuildX працює на офіційній основі, тобто ми вкладаємо з вами контракт, щоб ви були впевнені в тому, що отримаєте найкращий результат.</p>
+                                    <button class="btn__documents">Документи</button>
+                                </div>
+                                <div class="why-us__img">
+                                    <img src="images/boy-f.png" alt="boy">
+                                </div>
+                            </div>
+                                
+                            <div class="why-us__info">
+                                <h1>Якість протягом всього шляху</h1>
+                                <div class="paragraph">
+                                    <p>Проект починається з замовлення. Спеціалісти допоможуть зупинитися на найкращому для вас варіанті. Потім почнеться робота.</p>
+                                    <p>Готова робота нашої компанії - не лише проект. Ми допоможемо вам з усіма дозволами, підберемо кращих спеціалістів для побудови та складемо приблизну ціну.</p>
+                                </div>
+                                <button class="btn btn__begin">Розпочати роботу!</button>
+                            </div>
+                </section>
+
+                <section class="how-works">
+                    <h1 class="how-works__h">Як це працює?</h1>
+                    <div class="item one">
+                        <h3>1.Ви обираєте...</h3>
+                        <p>Є готові варіанти проектів, а також можна під замовлення.</p>
+                    </div>
+
+                    <img src="images/item-1.png" class="img-1" alt="item-1">
+                    <img src="images/item-2.png" class="img-2" alt="item-2">
+                    <img src="images/item-3.png" class="img-3" alt="item-3">
+
+                    <div class="item two">
+                        <h3>2.Ми робимо вам проект...</h3>
+                        <p>Повністю готовий до експлуатації проект, перевірений фахівцями.</p>
+                    </div>
+
+                    <div class="item three">
+                        <h3>3.Отримуємо дозвіл...</h3>
+                        <p>Ми позбавляємо вас головної болі - дозвіл на будівнитцтво беремо на себе!</p>
+                    </div>
+
+                    <div class="item four">
+                        <h3>4.Шукаємо будівельників...</h3>
+                        <p>В нашій базі є безліч надійних компаній, з якими ми співпрацюємо.</p>
+                    </div>
+
+                    <div class="item five">
+                        <h3>5.Будівництво...</h3>
+                        <p>Якщо все зробити правильно, ми на цьому етапі через тиждень!</p>
+                    </div>
+
+                    <div class="item six">
+                        <h3>6.Готово!</h3>
+                        <p>Всього 5 кроків до готового будинку. Все просто!</p>
+                    </div>
+
+                    <div class="btn btn--black">
+                        <a href="#">Зв’язатись з нами</a>
+                        <a href="#">Переглянути проекти</a>
+                    </div>
+                </section>
+
+                <section class="examples">
+                    <h1>Приклади робіт BuildX</h1>
+                    <div class="projects">
+                        <div class="project" onclick="window.location='#'" tabindex="1">
+                            <img src="images/project-1.jpg" alt="project">
+                            <div class="project__info">
+                                <div class="project__id">ID-2545678</div>
+                                <div class="project__name">Проект “Сніжний”</div>
+                            </div>
+                            <div class="project__info">
+                                <a href="#" class="btn btn__more">Переглянути</a>
+                                <div class="project_details">
+                                    <div class="details f">
+                                        <span class="iconify" data-inline="false" data-icon="bx:bx-area" style="color: #606b74; font-size: 16px;"></span>
+                                        <p>250 м<sup>2</sup></p>
+                                        <span class="iconify" data-inline="false" data-icon="dashicons:money-alt" style="color: #606b74; font-size: 18px;"></span>
+                                        <p>15000 грн</p>
+                                    </div>
+                                    <div class="details s">
+                                        <p>4</p>
+                                        <span class="iconify" data-inline="false" data-icon="ion:bed" style="font-size: 20.03205108642578px;"></span>
+                                        <p>3</p>
+                                        <span class="iconify" data-inline="false" data-icon="fa-solid:shower" style="font-size: 20.03205108642578px;"></span>
+                                        <p>6</p>
+                                        <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled" style="font-size: 20.03205108642578px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="addition-text">Якісно</p>
+
+                        <div class="project" onclick="window.location='#'" tabindex="1">
+                            <img src="images/project-2.jpg" alt="project">
+                            <div class="project__info">
+                                <div class="project__id">ID-5545678</div>
+                                <div class="project__name">Проект “Вестленд”</div>
+                            </div>
+                            <div class="project__info">
+                                <a href="#" class="btn btn__more">Переглянути</a>
+                                <div class="project_details">
+                                    <div class="details f">
+                                        <span class="iconify" data-inline="false" data-icon="bx:bx-area" style="color: #606b74; font-size: 16px;"></span>
+                                        <p>95 м<sup>2</sup></p>
+                                        <span class="iconify" data-inline="false" data-icon="dashicons:money-alt" style="color: #606b74; font-size: 18px;"></span>
+                                        <p>9000 грн</p>
+                                    </div>
+                                    <div class="details s">
+                                        <p>4</p>
+                                        <span class="iconify" data-inline="false" data-icon="ion:bed" style="font-size: 20.03205108642578px;"></span>
+                                        <p>3</p>
+                                        <span class="iconify" data-inline="false" data-icon="fa-solid:shower" style="font-size: 20.03205108642578px;"></span>
+                                        <p>6</p>
+                                        <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled" style="font-size: 20.03205108642578px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="x-img--block">
+                            <img class="x-img" src="images/x.png" alt="x">
+                        </div>
+
+                        <p class="addition-text">Стильно</p>
+
+                        <div class="project" onclick="window.location='#'" tabindex="1">
+                            <img src="images/project-3.jpg" alt="project">
+                            <div class="project__info">
+                                <div class="project__id">ID-3545678</div>
+                                <div class="project__name">Проект “OnenG”</div>
+                            </div>
+                            <div class="project__info">
+                                <a href="#" class="btn btn__more">Переглянути</a>
+                                <div class="project_details f">
+                                    <div class="details f">
+                                        <span class="iconify" data-inline="false" data-icon="bx:bx-area" style="color: #606b74; font-size: 16px;"></span>
+                                        <p>250 м<sup>2</sup></p>
+                                        <span class="iconify" data-inline="false" data-icon="dashicons:money-alt" style="color: #606b74; font-size: 18px;"></span>
+                                        <p>15000 грн</p>
+                                    </div>
+                                    <div class="details s">
+                                        <p>4</p>
+                                        <span class="iconify" data-inline="false" data-icon="ion:bed" style="font-size: 20.03205108642578px;"></span>
+                                        <p>3</p>
+                                        <span class="iconify" data-inline="false" data-icon="fa-solid:shower" style="font-size: 20.03205108642578px;"></span>
+                                        <p>6</p>
+                                        <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled" style="font-size: 20.03205108642578px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="addition-text">Комфортно</p>
+
+                        <div class="project" onclick="window.location='#'" tabindex="1">
+                            <img src="images/project-4.jpg" alt="project">
+                            <div class="project__info">
+                                <div class="project__id">ID-9545678</div>
+                                <div class="project__name">Проект “Кліо”</div>
+                            </div>
+                            <div class="project__info">
+                                <a href="#" class="btn btn__more">Переглянути</a>
+                                <div class="project_details">
+                                    <div class="details f">
+                                        <span class="iconify" data-inline="false" data-icon="bx:bx-area" style="color: #606b74; font-size: 16px;"></span>
+                                        <p>250 м<sup>2</sup></p>
+                                        <span class="iconify" data-inline="false" data-icon="dashicons:money-alt" style="color: #606b74; font-size: 18px;"></span>
+                                        <p>15000 грн</p>
+                                    </div>
+                                    <div class="details s">
+                                        <p>4</p>
+                                        <span class="iconify" data-inline="false" data-icon="ion:bed" style="font-size: 20.03205108642578px;"></span>
+                                        <p>3</p>
+                                        <span class="iconify" data-inline="false" data-icon="fa-solid:shower" style="font-size: 20.03205108642578px;"></span>
+                                        <p>6</p>
+                                        <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled" style="font-size: 20.03205108642578px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="addition-text">Надійно</p>
+
+                    </div>
+                </section>
+            </main>
+            
+            <footer>
+                <div class="section-1">
+                    <div class="item auth">
+                        <span class="iconify" data-inline="false" data-icon="carbon:login" style="font-size: 24px;"></span>
+                        <button onclick="modalWindow('id01')" id="btn-reg-footer" class="btn__menu">Реєстрація</button>
+                        <p>/</p>
+                        <button onclick="modalWindow('id02')" id="btn-log-footer" class="btn__menu">Вхід</button>
+                    </div>
+
+                    <div class="item">
+                        <a href="#" class="btn btn__menu pr">
+                            <span class="iconify" data-inline="false" data-icon="bi:arrow-up-square" style="font-size: 24px;"></span>
+                            <p>На початок</p>
+                        </a>
+                    </div>
+
+                    <div class="item social">
+                        <a href='#'><img src="images/social_media/facebook-black.svg" alt="facebook"></a>
+                        <a href='#'><img src="images/social_media/instagram-black.svg" alt="instagram"></a>
+                        <a href='#'><img src="images/social_media/youtube-black.svg" alt="youtube"></a>
+                    </div>
+
+                    <div class="item">
+                        <a href="#" class="btn btn__menu">
+                            <span class="iconify" data-inline="false" data-icon="clarity:design-line" style="font-size: 24px;"></span>
+                            <p>Проекти</p>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="#" class="btn btn__menu last">
+                            <span class="iconify" data-inline="false" data-icon="ic:outline-border-color" style="font-size: 24px;"></span>
+                            <p>Як зробити замовлення</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section-2">
+                    <ul>
+                        <li>
+                            <img src="images/icons/email.svg" alt="email">
+                            <p>buildX_info@gmail.com</p>
+                        </li>
+                        <li class="second-li">
+                            <img src="images/icons/phone.svg" alt="phone">
+                            <p>+380951231235</p>
+                        </li>
+                        <li class="logo-footer">
+                            <a href="#"><img src="images/icons/Logo-footer.svg" alt="logo"></a>
+                        </li>
+                        <li class="cookie">
+                            <a href="#">
+                                <span class="iconify" data-inline="false" data-icon="fluent:cookies-20-regular" style="color: #ffffff;"></span>
+                                <p>Cookies</p>
+                            </a>
+                        </li>
+                        <li class="last">
+                            <a href="#" class="last">
+                                <img src="images/icons/privacy.svg" alt="privacy">
+                                <p>Політика конфіденційності</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <script src="./script/script.js"></script>
+    </body>
+    
+</html>
