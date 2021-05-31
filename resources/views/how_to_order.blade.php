@@ -3,7 +3,7 @@
 @section('header')
     <div class="hero how-to-order-page">
         <header>
-            <a href="#" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
+            <a href="/" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
             <div class="btn--burger">
                 <span style="cursor:pointer" id="burger" class="burger">&#9776;</span>
             </div>
@@ -80,6 +80,7 @@
             <p>Вже обрали проект?</p>
             <h1>Лишився лише<br>один крок до<br>проекту будинку<br>мрії - замовити у<br>професіоналів!</h1>
         </div>
+        </header>
     </div>
 @endsection
 @section('content')
@@ -133,7 +134,11 @@
             </div>
         </section>
 
-        <a href="/projects" class="btn btn--back steps">Переглянути проекти</a>
+        @if(empty($_GET['name']))
+            <a href="/projects" class="btn btn--back steps">Переглянути проекти</a>
+        @else
+            <a href="/projects?name={{$_GET['name']}}" class="btn btn--back steps">Переглянути проекти</a>
+        @endif
 
         <section class="steps-details">
             <div class="details__item f">

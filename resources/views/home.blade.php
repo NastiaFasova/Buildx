@@ -4,7 +4,7 @@
     <div class="hero">
         <header>
             @yield('header')
-            <a href="#" class="logo__og"><img src="../../images/Logo.svg" alt="logo"></a>
+            <a href="/" class="logo__og"><img src="../../images/Logo.svg" alt="logo"></a>
             <div class="btn--burger">
                 <span style="cursor:pointer" id="burger" class="burger">&#9776;</span>
             </div>
@@ -12,11 +12,13 @@
         <div class="main-text">
             <p>Не можеш знайти будинок мрії?</p>
             <h1>Компанія BuildX допоможе!<br> З нас проект - з <br>Вас реалізація!</h1>
+            @if(empty($_GET['name']))
             <div class="btn btn--auth">
                 <button onclick="modalWindow('id02')" id="btn-log" class="btn__login main">Ввійти</button>
                 <button onclick="modalWindow('id01')" id="btn-reg" class="btn__registration main">Зареєструватись
                 </button>
             </div>
+            @endif
         </div>
     </div>
 
@@ -49,7 +51,7 @@
             <p>Готова робота нашої компанії - не лише проект. Ми допоможемо вам з усіма дозволами, підберемо
                 кращих спеціалістів для побудови та складемо приблизну ціну.</p>
         </div>
-        <button class="btn btn__begin">Розпочати роботу!</button>
+        <a href="/how-to-order"><button class="btn btn__begin">Розпочати роботу!</button></a>
     </div>
 </section>
 
@@ -90,8 +92,8 @@
     </div>
 
     <div class="btn btn--black">
-        <a href="#">Зв’язатись з нами</a>
-        <a href="#">Переглянути проекти</a>
+        <a href="/contacts">Зв’язатись з нами</a>
+        <a href="/projects">Переглянути проекти</a>
     </div>
 </section>
 

@@ -42,12 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $buildings = [
-        'buildings' => 'array'
-    ];
-
     public function feedbacks(): HasMany
     {
         return $this->hasMany('App\Models\Response');
+    }
+
+    public function response()
+    {
+        return $this -> hasOne('App\Models\Response');
     }
 }

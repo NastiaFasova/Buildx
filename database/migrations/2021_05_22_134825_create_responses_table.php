@@ -15,8 +15,8 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("phone_number");
+            $table->string('user_name');
+            $table->string('user_phone');
             $table->string("response");
             $table->timestamps();
         });
@@ -30,5 +30,6 @@ class CreateResponsesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('responses');
+
     }
 }

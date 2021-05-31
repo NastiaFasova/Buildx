@@ -3,39 +3,53 @@
 @section('header')
     <div class="hero projects-page">
         <header>
-            <a href="#" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
+            <a href="/" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
             <div class="btn--burger">
                 <span style="cursor:pointer" id="burger" class="burger">&#9776;</span>
             </div>
             @include('menu')
             <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
                 @foreach($popular_buildings as $building)
-                <div class="gallery-cell">
-                    @foreach($building->images as $image)
-                    <img src="/images/{{$image->url}}">
-                    @endforeach
-                    <div class="overlay project-kink">
+                    <div class="gallery-cell">
+                        @foreach($building->images as $image)
+                            @if($image->main_picture == 1)
+                                <img src="/images/{{$image->url}}">
+                            @endif
+                        @endforeach
+                        <div class="overlay project-kink">
                             <div class="project__info">
                                 <div class="project__name">{{$building->title}}</div>
                             </div>
 
                             <div class="details s">
                                 <p>{{$building->bedroom_number}}</p>
-                                <span class="iconify" data-inline="false" data-icon="ion:bed" style="font-size: 20.03205108642578px;"></span>
+                                <span class="iconify" data-inline="false" data-icon="ion:bed"
+                                      style="font-size: 20.03205108642578px;"></span>
                                 <p>{{$building->bathroom_number}}</p>
-                                <span class="iconify" data-inline="false" data-icon="fa-solid:shower" style="font-size: 20.03205108642578px;"></span>
+                                <span class="iconify" data-inline="false" data-icon="fa-solid:shower"
+                                      style="font-size: 20.03205108642578px;"></span>
                                 <p>{{$building->door_number}}</p>
-                                <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled" style="font-size: 20.03205108642578px;"></span>
+                                <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled"
+                                      style="font-size: 20.03205108642578px;"></span>
                             </div>
-
-                            <a href="/projects/{{ Str::lower($building->id) }}">
-                                <div class="project__info th">
-                                    <div class="project__price">{{$building->cost}} тис. грн.</div>
+                            @if(empty($_GET['name']))
+                                <a href="/projects/{{ Str::lower($building->id) }}">
+                                    <div class="project__info th">
+                                        <div class="project__price">{{$building->cost}} тис. грн.</div>
                                         <img src="images/projects/arrow.svg" alt="">
-                                </div>
-                            </a>
+                                    </div>
+                                </a>
+                            @else
+                                <a href="/projects/{{ Str::lower($building->id) }}?name={{$_GET['name']}}">
+                                    <div class="project__info th">
+                                        <div class="project__price">{{$building->cost}} тис. грн.</div>
+                                        <img src="images/projects/arrow.svg" alt="">
+                                    </div>
+                                </a>
+                            @endif
+
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
 
@@ -43,9 +57,9 @@
                 <div class="small-text">Унікальні персональні проекти</div>
                 <h1>Ми підберемо Вам найкращий варіант!</h1>
                 <div class="search-container">
-                    <form action="#">
+                    <form action="{{ route('search') }}">
                         <div class="search-form">
-                            <input type="text" placeholder="Хай-тек" name="search">
+                            <input type="text" placeholder="Хай-тек" name="search" id ="search">
                         </div>
                         <button type="submit" class="btn btn__begin">Шукати</button>
                     </form>
@@ -53,13 +67,6 @@
             </div>
 
             <div class="filter-section s">
-                <div class="search-container">
-                    <form action="#">
-                        <div class="search-form filter">
-                            <input type="text" id="search" onkeyup="searchFunc()" placeholder="ID">
-                        </div>
-                    </form>
-                </div>
                 @include('filter')
             </div>
     </div>
@@ -71,15 +78,31 @@
             <div class="all-projects__container">
                 @foreach (Auth::user()->ordered_buildings as $project)
                     <div class="project" onclick="window.location='#'" tabindex="1">
-                        <a href="/projects/{{ Str::lower($project->id) }}">
-                            <img src="/images/{{$project->images[0]['url']}}" alt="project">
-                            <div class="project__info">
-                                <div class="project__id">{{$project->index}}</div>
-                                <div class="project__name">{{$project->title}}</div>
-                            </div>
-                        </a>
+                        @if(empty($_GET['name']))
+                            <a href="/projects/{{ Str::lower($project->id) }}">
+                                <img src="/images/{{$project->images[0]['url']}}" alt="project">
+                                <div class="project__info">
+                                    <div class="project__id">{{$project->index}}</div>
+                                    <div class="project__name">{{$project->title}}</div>
+                                </div>
+                            </a>
+                        @else
+                            <a href="/projects/{{ Str::lower($project->id) }}?name={{$_GET['name']}}">
+                                <img src="/images/{{$project->images[0]['url']}}" alt="project">
+                                <div class="project__info">
+                                    <div class="project__id">{{$project->index}}</div>
+                                    <div class="project__name">{{$project->title}}</div>
+                                </div>
+                            </a>
+                        @endif
+
                         <div class="project__info">
-                            <a href="/projects/{{ Str::lower($project->id) }}" class="btn btn__more">Переглянути</a>
+                            @if(empty($_GET['name']))
+                                <a href="/projects/{{ Str::lower($project->id) }}" class="btn btn__more">Переглянути</a>
+                            @else
+                                <a href="/projects/{{ Str::lower($project->id) }}?name={{$_GET['name']}}"
+                                   class="btn btn__more">Переглянути</a>
+                            @endif
                             <div class="project_details">
                                 <div class="details f">
                                 <span class="iconify" data-inline="false" data-icon="bx:bx-area"
@@ -97,7 +120,8 @@
                                     <span class="iconify" data-inline="false" data-icon="fa-solid:shower"
                                           style="font-size: 20.03205108642578px;"></span>
                                     <p>{{$project->door_number}}</p>
-                                    <span class="iconify" data-inline="false" data-icon="fluent:conference-room-20-filled"
+                                    <span class="iconify" data-inline="false"
+                                          data-icon="fluent:conference-room-20-filled"
                                           style="font-size: 20.03205108642578px;"></span>
                                 </div>
                             </div>
@@ -110,8 +134,12 @@
     <section class="all-projects">
         <h1 class="fancy"><span>Усі проекти</span></h1>
         <div class="all-projects__container">
-            @include('projects_list')
-            <button type="submit" class="btn btn__begin">Далі</button>
+            @if($isAllContentLoaded)
+                @include('projects_list')
+            @else
+                @include('projects_list')
+                <a href="/projects-all" class="a__loaded"><button type="submit" class="btn btn__begin">Далі</button></a>
+            @endif
         </div>
     </section>
 @endsection

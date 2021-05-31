@@ -8,6 +8,7 @@ use App\Models\Building;
 use App\Models\Characteristic;
 use App\Models\Scheme;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BuildingController extends Controller
 {
@@ -15,7 +16,17 @@ class BuildingController extends Controller
     {
         $popular_buildings = Building::all()->sortByDesc('popularity_rating')->take(4);
         return view("home", [
-            "popular_buildings" => $popular_buildings
+            "popular_buildings" => $popular_buildings]);
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $isAllContentLoaded = true;
+        $popular_buildings = Building::where('title', 'LIKE', "%{$search}%")->get();
+        return view("projects", [
+            "popular_buildings" => $popular_buildings,
+            "isAllContentLoaded" => $isAllContentLoaded,
         ]);
     }
 
@@ -39,9 +50,10 @@ class BuildingController extends Controller
 
     public function showAll(Request $request)
     {
+        $isAllContentLoaded = false;
         $projectQuery = Building::query();
         if ($request->filled('bed')) {
-            $projectQuery->where('bedroom_number', '=', $request->bedroom_number);
+            $projectQuery->where('bedroom_number', '=', $request->bed);
         }
         if ($request->filled('shower')) {
             $projectQuery->where('bathroom_number', '=', $request->shower);
@@ -56,8 +68,20 @@ class BuildingController extends Controller
             $projectQuery->where('cost', '>=', $request->price);
         }
         $popular_buildings = Building::all()->sortByDesc('popularity_rating')->take(4);
+//        $popular_buildings = $projectQuery->take(4);
         return view("projects", [
-            "popular_buildings" => $popular_buildings
+            "popular_buildings" => $popular_buildings,
+            "isAllContentLoaded" => $isAllContentLoaded
+        ]);
+    }
+
+    public function showOverallAll()
+    {
+        $isAllContentLoaded = true;
+        $popular_buildings = Building::all()->sortByDesc('popularity_rating');
+        return view("projects", [
+            "popular_buildings" => $popular_buildings,
+            "isAllContentLoaded" => $isAllContentLoaded
         ]);
     }
 }

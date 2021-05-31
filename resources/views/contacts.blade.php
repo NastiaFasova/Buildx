@@ -2,7 +2,7 @@
 @section('title')BuildX @endsection
 <div class="hero projects-page">
     <header>
-        <a href="#" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
+        <a href="/" class="logo__og"><img src="images/Logo.svg" alt="logo"></a>
         <div class="btn--burger">
             <span style="cursor:pointer" id="burger" class="burger">&#9776;</span>
         </div>
@@ -13,11 +13,11 @@
                     <img src="images/contacts/cont1.jpg" alt="">
                 </div>
                 <div class="contacts-container__content">
-                    <h2>Директор компанії</h2>
-                    <h3>Петренко П.П.</h3>
-                    <p>“Робота не вовк, в ліс не втече.”</p>
+                    <h2>Директор з продажу</h2>
+                    <h3>Василенко І.М.</h3>
+                    <p>“Виберіть собі роботу до душі ”</p>
                     <p>Контакти: <br>
-                        petrenko.vovk@gmail.com</p>
+                        vasylenko.vovk@gmail.com</p>
                 </div>
             </div>
 
@@ -38,14 +38,15 @@
                     <img src="images/contacts/cont3.jpg" alt="">
                 </div>
                 <div class="contacts-container__content">
-                    <h2>Директор компанії</h2>
-                    <h3>Петренко П.П.</h3>
-                    <p>“Робота не вовк, в ліс не втече.”</p>
+                    <h2>Фінансовий директор</h2>
+                    <h3> Костенко М.О.</h3>
+                    <p>"Ще один день на роботі — ще одна вкрадена ручка. ”</p>
                     <p>Контакти: <br>
-                        petrenko.vovk@gmail.com</p>
+                        kostenko.vovk@gmail.com</p>
                 </div>
             </div>
         </div>
+    </header>
 </div>
 
 <main class="contacts-page">
@@ -66,10 +67,12 @@
 
         <div class="contacts-form__form">
             <p>Ми Вам передзвонимо!</p>
-            <form method="post">
-                <input type="text" placeholder="Ім’я" name="name" required>
-                <input type="text" placeholder="Номер телефону" name="phoneNumber" required>
-                <input type="text" placeholder="Замітка" name="notes" required class="contacts-form input-last">
+            <form method="post" action="{{ route('contact-form') }}">
+                @csrf
+                <input type="text" placeholder="Ім’я" name="name" id="name" required>
+                <input type="text" placeholder="Номер телефону" name="phone_number" id="phone_number" required>
+                <input type="text" placeholder="Замітка" name="notes" id="notes"
+                       required class="contacts-form input-last">
                 <button class="btn contacts-form__send-btn" type="submit">Надіслати</button>
             </form>
         </div>

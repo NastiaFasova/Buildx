@@ -74,7 +74,7 @@
                     <p>+380951231235</p>
                 </li>
                 <li class="logo-footer">
-                    <a href="#"><img src="/images/icons/Logo-footer.svg" alt="logo"></a>
+                    <a href="/"><img src="/images/icons/Logo-footer.svg" alt="logo"></a>
                 </li>
                 <li class="cookie">
                     <a href="#">

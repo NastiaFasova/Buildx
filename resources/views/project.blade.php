@@ -3,7 +3,7 @@
 @section('header')
     <div class="hero project-page">
         <header>
-            <a href="#" class="logo__og"><img src="/images/Logo.svg" alt="logo"></a>
+            <a href="/" class="logo__og"><img src="/images/Logo.svg" alt="logo"></a>
             <div class="btn--burger">
                 <span style="cursor:pointer" id="burger" class="burger">&#9776;</span>
             </div>
@@ -11,7 +11,12 @@
             <div class="project-slider">
                 <div class="overlay">
                     <div class="overlay__info">{{$project->title}} {{$project->index}}</div>
-                    <a href="/projects">Назад до проектів...</a>
+                    @if(empty($_GET['name']))
+                        <a href="/projects">Назад до проектів...</a>
+                    @else
+                        <a href="/projects?name={{$_GET['name']}}">Назад до проектів...</a>
+                    @endif
+
                 </div>
 
                 @foreach($images as $image)
@@ -144,6 +149,11 @@
                 </form>
             </div>
         </section>
-        <a href="/projects" class="btn btn--back">Назад до проектів...</a>
+
+        @if(empty($_GET['name']))
+            <a href="/projects" class="btn btn--back">Назад до проектів...</a>
+        @else
+            <a href="/projects?name={{$_GET['name']}}" class="btn btn--back">Назад до проектів...</a>
+        @endif
     </main>
 @endsection

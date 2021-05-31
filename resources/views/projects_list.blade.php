@@ -1,14 +1,29 @@
 @foreach ($popular_buildings as $project)
     <div class="project" onclick="window.location='#'" tabindex="1">
-        <a href="/projects/{{ Str::lower($project->id) }}">
+        @if(empty($_GET['name']))
+            <a href="/projects/{{ Str::lower($project->id) }}">
                 <img src="/images/{{$project->images[0]['url']}}" alt="project">
-            <div class="project__info">
-                <div class="project__id">{{$project->index}}</div>
-                <div class="project__name">{{$project->title}}</div>
-            </div>
-        </a>
+                <div class="project__info">
+                    <div class="project__id">{{$project->index}}</div>
+                    <div class="project__name">{{$project->title}}</div>
+                </div>
+            </a>
+        @else
+            <a href="/projects/{{ Str::lower($project->id) }}?name={{$_GET['name']}}">
+                <img src="/images/{{$project->images[0]['url']}}" alt="project">
+                <div class="project__info">
+                    <div class="project__id">{{$project->index}}</div>
+                    <div class="project__name">{{$project->title}}</div>
+                </div>
+            </a>
+        @endif
         <div class="project__info">
-            <a href="/projects/{{ Str::lower($project->id) }}" class="btn btn__more">Переглянути</a>
+            @if(empty($_GET['name']))
+                <a href="/projects/{{ Str::lower($project->id) }}" class="btn btn__more">Переглянути</a>
+            @else
+                <a href="/projects/{{ Str::lower($project->id) }}?name={{$_GET['name']}}" class="btn btn__more">Переглянути</a>
+            @endif
+
             <div class="project_details">
                 <div class="details f">
                                 <span class="iconify" data-inline="false" data-icon="bx:bx-area"

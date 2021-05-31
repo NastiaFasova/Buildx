@@ -3,8 +3,8 @@ let modalL = document.getElementById("id02");
 let burger = document.getElementById("burger");
 let nav = document.getElementById("nav");
 
-window.onclick = function(event) {
-    if(event.target == modalR || event.target == modalL) {
+window.onclick = function (event) {
+    if (event.target == modalR || event.target == modalL) {
         modalR.style.display = "none";
         modalL.style.display = "none";
     }
@@ -58,16 +58,20 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("Slides");
     let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
     for (let slide of slides) {
         slide.style.display = "none";
     }
     for (let dot of dots) {
         dot.className = dot.className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 
 function plusSlides(n) {

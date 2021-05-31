@@ -165,15 +165,15 @@ input {
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
-  }
-    
+}
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
 }
-  
+
 .nav {
     display: grid;
     grid-template-columns: 20% 40% 40%;
@@ -203,7 +203,7 @@ input {
     text-align: center;
     margin-top: 6px;
 }
-  
+
 .btn--menu a{
     color: #FFFFFF;
     font-weight: 400;
@@ -387,12 +387,12 @@ aside h3 {
 .why-us__info h1 span {
     /* display: inline-block;
     font-size: 35px; */
-    padding:0 10px; 
+    padding:0 10px;
 }
 
 .why-us__info h1 {
-   overflow: hidden;
-   font-size: 35px;
+    overflow: hidden;
+    font-size: 35px;
 }
 
 .why-us__info h1:after{
@@ -835,6 +835,7 @@ aside h3 {
 .project__info.th img{
     width: 14%;
     display: block;
+    height: auto;
 }
 
 .search-form input {
@@ -852,7 +853,7 @@ aside h3 {
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(31px);
     position: absolute;
-    top: 40%;   
+    top: 40%;
     left: 16.5%;
     padding: 30px 20px;
     width: 22%;
@@ -868,7 +869,7 @@ aside h3 {
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(31px);
     position: absolute;
-    top: 57%;   
+    top: 57%;
     right: 7.3%;
     padding: 30px 20px;
     width: 37%;
@@ -1057,15 +1058,15 @@ aside h3 {
     background-repeat: no-repeat;
     background-position: center;
 }
-  
+
 .check-container label {
     padding: 8px 10px 5px 40px;
     display: inline-block;
     width: 100%;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .check-container .btn {
@@ -1087,15 +1088,15 @@ aside h3 {
     text-align: center;
     color: #FFFFFF;
     font-size: 28px;
-  }
+}
 
 .fancy span {
     display: inline-block;
-    position: relative;  
+    position: relative;
 }
 
-  .fancy span:before,
-  .fancy span:after {
+.fancy span:before,
+.fancy span:after {
     content: "";
     position: absolute;
     border-top: 2px solid white;
@@ -1105,7 +1106,7 @@ aside h3 {
     width: 550px;
 }
 
-  .fancy span:before {
+.fancy span:before {
     right: 100%;
     margin-right: 15px;
 }
@@ -1129,7 +1130,7 @@ aside h3 {
     padding-bottom: 15px;
 }
 
-.btn__begin {
+.a__loaded {
     grid-column-start: 1;
     grid-column-end: 3;
     margin-top: 30px;
@@ -1174,7 +1175,7 @@ aside h3 {
     display: none;
 }
 
-.Slides img { 
+.Slides img {
     height: 50vh;
     object-fit: cover;
 }
@@ -1297,24 +1298,24 @@ aside h3 {
     display: inline-block;
     transition: background-color 0.6s ease;
 }
-  
+
 .dot.active, .dot:hover {
     background-color: #717171;
     border: 4px solid #bbb;
 }
-  
+
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
 }
-  
+
 @-webkit-keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
 }
-  
+
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
@@ -1713,7 +1714,7 @@ ol li {
 .contacts-forms {
     padding: 70px 97px 100px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 hr {

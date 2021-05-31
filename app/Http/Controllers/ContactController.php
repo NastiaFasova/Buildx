@@ -4,7 +4,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\FeedbackRequest;
 use App\Models\Response;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -13,13 +15,13 @@ class ContactController extends Controller
         return view("contacts");
     }
 
-    public function send_feedback(FeedbackRequest $req)
+    public function send_feedback(Request $req)
     {
-        $visitor = Response::firstOrCreate(['name' => $req->input('name'),
-            'phone_number' => $req->input('phone_number')]);
         $feedback = new Response();
-        $feedback->status = true;
-        $feedback->feedback = $req->input('response');
+        $feedback->response = $req->input('notes');
+        $feedback->user_name = $req->input('name');
+        $feedback->user_phone = $req->input('phone_number');
         $feedback->save();
+        return redirect()->route('show');
     }
 }
